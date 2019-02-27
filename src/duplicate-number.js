@@ -17,6 +17,14 @@ function findDupNum(arr) {
   if (!arr || !(arr instanceof Array)) {
     throw new Error('arr must be an Array')
   } else {
+
+    for(let i = 0, len = arr.length; i < len; i++) {
+      if(arr[i] < 0 || arr[i] >= len) {
+        console.log('数组元素必须在 0~n-1 之间')
+        return
+      }
+    }
+
     let sorted = arr.sort(sortArray) // 对数组进行排序
 
     for (let i = 1, len = sorted.length; i < len; i++) {
@@ -49,6 +57,13 @@ function findDupNum1(arr) {
     throw new Error('arr must be an Array')
   }
 
+  for(let i = 0, len = arr.length; i < len; i++) {
+    if(arr[i] < 0 || arr[i] >= len) {
+      console.log('数组元素必须在 0~n-1 之间')
+      return
+    }
+  }
+
   let findArr = [] // 用来存放处理后的数组
   let find = false
 
@@ -79,6 +94,13 @@ function findDupNum2(arr) {
     throw new Error('arr must be an Array')
   }
 
+  for(let i = 0, len = arr.length; i < len; i++) {
+    if(arr[i] < 0 || arr[i] >= len) {
+      console.log('数组元素必须在 0~n-1 之间')
+      return
+    }
+  }
+
   let find = false,
       temp // 用于存放临时值
 
@@ -104,5 +126,5 @@ function findDupNum2(arr) {
 }
 
 let a = [2, 3, 1, 0, 2, 3, 5]
-let num = findDupNum2([0,1,2,1])
+let num = findDupNum2([1,2,3])
 console.log(num)
