@@ -4,6 +4,10 @@
  */
 function replaceSpace(str) {
   if(!str || typeof str !== 'string') {
+    if(str.length === 0) {
+      return str
+    }
+
     console.log('参数必须是字符串')
     return
   }
@@ -33,8 +37,13 @@ function replaceSpace(str) {
   return strArr.join('')
 }
 
-let str = 'hello world'
-let result = replaceSpace(str)
-console.log(result)
+// let str = 'hello world'
+// let result = replaceSpace(str)
+// console.log(result)
+
+console.log(replaceSpace(''))
+console.log(replaceSpace(' '))
+console.log(replaceSpace('hello'))
+console.log(replaceSpace('he   llo'))
 
 // console.log(str.replace(' ', '%20'))
